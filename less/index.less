@@ -1,0 +1,1404 @@
+@width:100%;
+@height:100%;
+@colorWhite:#fff;
+@display:none;
+.position(@value,@top,@bottom,@left,@right){
+    position:@value;
+    top:@top;
+    bottom:@bottom;
+    left:@left;
+    right:@right;
+}
+.backgroundImg(@url,@size,@repeat,@width,@height){
+    background: @url;
+    background-size: @size;
+    width: @width;
+    height: @height;
+    background-repeat: @repeat;
+}
+.text{
+    color: #ffffff;
+    text-align: center;
+}
+.li{
+    list-style: none;
+    padding: 0.625rem 0;
+    display: inline-block;
+}
+.animation{
+    .animate-box {
+        opacity: 0;
+    }
+    .fadeInUp {
+        -webkit-animation-name: fadeInUp;
+        animation-name: fadeInUp;
+    }
+    @-webkit-keyframes fadeInUp {
+      from {
+        opacity: 0;
+        visibility: hidden;
+        /*-webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);*/
+        -webkit-transform: translate3d(0, 40px, 0);
+        transform: translate3d(0, 40px, 0);
+      }
+    
+      to {
+        opacity: 1;
+        /*visibility: visible;*/
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        visibility: hidden;
+        /*-webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);*/
+        -webkit-transform: translate3d(0, 40px, 0);
+        transform: translate3d(0, 40px, 0);
+      }
+    
+      to {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+    .animated-fast {
+      -webkit-animation-duration: .5s;
+      animation-duration: .5s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+}
+.desc{
+    width: @width;
+    height: @height;
+    background: @colorWhite;
+    opacity: 0;
+    display: table-cell;
+    vertical-align: middle;
+}
+@media only screen and (max-width: 768px) {// (<768px)超小屏幕 手机 
+    .pc{
+        display: none!important;;
+    }
+    .mobile{
+        display: block!important;;
+    }
+    html,body  {
+        font-size: 13px!important;
+    }
+    .motto,
+    .ms,
+    hr{
+        width: 90%;
+        margin-left: 5%;
+    }
+    #module5 {
+         .circle{
+             width:160px;
+             height: 160px;
+         }
+     }
+    .project1, .project2, .project3, .project4, .project5, .project6, .project7, .project8,.project9,.project10,.project11,.project12{
+        height: 318px;
+        .content{
+            height: 158px;
+        }
+    }
+}
+@media only screen and (min-width: 768px){ // (≥768px)小屏幕 平板 
+    .pc{
+        display: block!important;
+    }
+    .mobile{
+        display: none!important;;
+    }
+    html,body {
+        font-size: 14px!important;
+    }
+     #module5 {
+         .circle{
+             width:200px;
+             height: 200px;
+         }
+     }
+     .pic {
+         img {
+            position: absolute;
+            top: 50%!important;
+            margin-top: -200px!important;
+            width:400px!important;
+            left: 50%;
+            margin-left: -200px!important;
+        }
+     }
+}
+@media only screen and (min-width: 992px){ // (≥992px)中等屏幕 桌面显示器 
+    html,body {
+        font-size: 15px!important;
+    }
+}
+@media only screen and (min-width: 1200px){//(≥1200px)大屏幕 大桌面显示器 
+    html,body {
+        font-size: 16px!important;
+    }
+    .project1, .project2, .project3, .project4, .project5, .project6, .project7, .project8,.project9,.project10,.project11,.project12{
+        height: 400px;
+        .content{
+            height: 174px;
+        }
+    }
+}
+
+   
+body{
+    width: @width;
+    height: @height;
+    font-family: "Vladimir Script","cursive","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    overflow: hidden;
+    .fh5co-loader{
+        .position(fixed,0,0,0,0);
+        z-index: 999;
+        background: url(../img/loader.gif) center no-repeat @colorWhite;
+        filter:alpha(opacity=0);
+        animation: zoomout 1s linear;
+        -webkit-animation: zoomout 1s linear;
+    }
+    @keyframes zoomout
+    {
+        from {opacity:1;filter:alpha(opacity=100);}
+        to {opacity:0;filter:alpha(opacity=0);}
+    }
+    
+    @-webkit-keyframes zoomout /*Safari and Chrome*/
+    {
+        from {opacity:1;filter:alpha(opacity=100);}
+        to {opacity:0;filter:alpha(opacity=0);}
+    }
+    .module{
+        width: 100%;
+    }
+    #module1{
+        background-attachment: fixed;
+        background-image: url(../img/cover_bg_3.jpg);
+        background-size: cover;
+        .overlay{
+            width: @width;
+            height: @height;
+            background-color: rgba(255, 144, 0, 0.9);
+            .container{
+                height: @height;
+                .row{
+                    height: @height;
+                    .tb{
+                        display: table;
+                        height: @height;
+                        padding: 0;
+                        .md{
+                            display: table-cell;
+                            vertical-align: middle;
+                            animation: scale 1s linear;
+                            -webkit-animation: scale 1s linear;
+                            @keyframes scale{
+                                from{transform: scale(.8,.8)}
+                                to{transform: scale(1,1)}
+                            }
+                            @-webkit-keyframes scale{
+                                from{transform: scale(.8,.8)}
+                                to{transform: scale(1,1)}
+                            }
+                            .user{
+                                .backgroundImg(url(../img/user-3.jpg),cover,no-repeat,12.5rem,12.5rem);
+                                margin: auto;
+                                border-radius: 50%;
+                                cursor: pointer;
+                            }
+                            .row{
+                                height: auto;
+                                 h1{
+                                    margin-bottom: 1.875rem;
+                                    .text;
+                                    font-size: 2.875rem;
+                                    -webkit-transform: rotate(-5deg); 
+                                    -moz-transform: rotate(-5deg);
+                                    -ms-transform: rotate(-5deg);
+                                    -o-transform: rotate(-5deg);
+                                    transform: rotate(-5deg);
+                                    span{
+                                        font-family: "Vladimir Script","cursive","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+                                        padding: 0.25rem 0.9375rem;
+                                        &:before{
+                                            content: '';
+                                            width: 1.875rem;
+                                            height: 0.25rem;
+                                            position:absolute;
+                                            top:2.1875rem;
+                                        }
+                                        &:after{
+                                            content: '';
+                                            width: 1.875rem;
+                                            height: 0.25rem;
+                                            position:absolute;
+                                            top:2.8125rem;
+                                        }
+                                    }
+                                }
+                            }
+                            h3{
+                                .text;
+                                font-size: 1.3rem;
+                                a{
+                                    color: #fff;
+                                }
+                            }
+                            ul{
+                                .text;
+                                font-size:1.25rem;
+                                cursor: pointer;
+                                list-style: none;
+                                padding: 0;
+                                li{
+                                    margin-top: 1.5rem;
+                                    width: @width;
+                                    span{
+                                        margin: 0 .5rem;
+                                        font-size: 1.5rem;
+                                        display: inline-block;
+                                        &:hover{
+                                            color: yellow;
+                                            transform: scale(1.1);
+                                            -webkit-transform: scale(1.1);
+                                        }
+                                    }
+                                    a{
+                                        color: @colorWhite;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #module2{
+        background: url(../img/bg.png);
+        .container{
+            height: @height;
+            .page{
+                height: @height;
+                .introduce{
+                    display: table;
+                    height: @height;
+                    padding: 0;
+                    .content{
+                        display: table-cell;
+                        vertical-align: middle;
+                        .aboutMe{
+                            text-align: center;
+                            font-size: 2.5rem;
+                            margin-bottom: 4rem;
+                            line-height: 1.5;
+                            color: #000;
+                        }
+                        .row{
+                           >div{
+                               padding: 0;
+                                .age,.work,.address,.education{
+                                    width: 100%;
+                                    div{
+                                        width: 5rem;
+                                        height: 5rem;
+                                        line-height: 5rem;
+                                        margin: auto;
+                                        background: rgba(255, 144, 0, 0.9);
+                                        border-radius: 100%;
+                                        text-align: center;
+                                        cursor: pointer;
+                                        span{
+                                            color: #fff;
+                                            font-size: 2.5rem;
+                                         }
+                                         &:hover{
+                                             animation: glow 800ms ease-out infinite alternate;
+                                             background-color:#ff9900;
+                                         }
+                                         @keyframes glow {
+                                            0% {
+                                                border-color: #ff9000;
+                                                box-shadow: 0 0 5px rgba(255, 144, 0, 0.2), inset 0 0 5px rgba(255, 144, 0, 0.2), 0 1px 0 #ff9000;
+                                            }
+                                            100% {
+                                                border-color: #ff9000e6;
+                                                box-shadow: 0 0 120px rgba(255, 144, 0, 0.9), inset 0 0 60px rgba(255, 144, 0, 0.9), 0 1px 0 #ff9000e6;
+                                            }
+                                        }
+                                    }
+                                    h5{
+                                        text-align: center;
+                                    }
+                                }
+                                .work，.email{
+                                    div{
+                                        span{
+                                            font-size: 2rem;
+                                        }
+                                    }
+                                }
+                                .about_info{
+                                    width: @width;
+                                    margin-top: 4rem;
+                                    text-align: center;
+                                    position: relative;
+                                    p{
+                                        font-size: 1.1rem;
+                                        margin-bottom: 1rem;
+                                    }
+                                    &:before,
+                                    &:after{
+                                        content: '';
+                                        position: absolute;
+                                        width: 50px;
+                                        height: 50px;
+                                        content: "";
+                                    }
+                                    &:before{
+                                        top: 0;
+                                        left: 0;
+                                        border-top: 2px solid rgba(255, 144, 0, 0.9);
+                                        border-left: 2px solid rgba(255, 144, 0, 0.9);
+                                    }
+                                    &:after{
+                                        right: 0;
+                                        bottom: 0;
+                                        border-bottom: 2px solid rgba(255, 144, 0, 0.9);
+                                        border-right: 2px solid rgba(255, 144, 0, 0.9);
+                                    }
+                                }
+                           }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #module3{
+        .container{
+            height: @height;
+            .page{
+                 height: @height;
+                 .introduce{
+                    display: table;
+                    height: 100%;
+                    padding: 0;
+                    .content{
+                        display: table-cell;
+                        vertical-align: middle;
+                        .workExperience{
+                            margin: 0;
+                            padding: 0;
+                            font-size: 1.2rem;
+                            list-style: none;
+                            position: relative;
+                            li{
+                                width: @width;
+                                height: 10rem;
+                                .title{
+                                    text-align: center;
+                                    font-size: 1.5rem;
+                                    color: #000; 
+                                    padding: 0.4375rem  1rem;
+                                    background: #e6e6e6;
+                                    display: inline-block;
+                                    margin-bottom: 2rem;
+                                }
+                            }
+                            :first-child{
+                                text-align: center;
+                            }
+                            .left{
+                                text-align: left;
+                                position: relative;
+                                .leftModuleIco{
+                                    .position(absolute,2rem,0,50%,0);
+                                    width: 3rem;
+                                    height: 3rem;
+                                    line-height: 3rem;
+                                    margin-left: -1.5rem;
+                                    margin-top: -1.5rem;
+                                    background-color: #FF9000;
+                                    border-radius: 50%;
+                                    color: @colorWhite;
+                                }
+                                .leftModuleContainer{
+                                    width: 45%;
+                                    float: left;
+                                    h3{
+                                        text-align: right;
+                                        margin: 0 0 1.25rem 0;
+                                        font-size: 1.5rem;
+                                    }
+                                    h4{
+                                        text-align: right;
+                                        color: #bfbfbf;
+                                        margin: 0 0 1.25rem 0;
+                                        font-size: 1rem;
+                                    }
+                                    p{
+                                        text-align: right;
+                                        font-family: cursive;
+                                    }
+                                }
+                            }
+                            .right{
+                                text-align: right;
+                                position: relative;
+                                .rightModuleIco{
+                                    .position(absolute,2rem,0,50%,0);
+                                    width: 3rem;
+                                    height: 3rem;
+                                    line-height: 3rem;
+                                    margin-left: -1.5rem;
+                                    margin-top: -1.5rem;
+                                    background-color: #FF9000;
+                                    border-radius: 50%;
+                                    color: @colorWhite;
+                                }
+                                .rightModuleContainer{
+                                    width: 45%;
+                                    float: right;
+                                    h3{
+                                        text-align: left;
+                                        margin: 0 0 1.25rem 0;
+                                        font-size: 1.5rem;
+                                    }
+                                    h4{
+                                        text-align: left;
+                                        color: #bfbfbf;
+                                        margin: 0 0 1.25rem 0;
+                                        font-size: 1rem;
+                                    }
+                                    p{
+                                        text-align: left;
+                                        font-family: cursive;
+                                    }
+                                }
+                            }
+                            .animation;
+                            :after{
+                                top: 20px;
+                                bottom: 0;
+                                position: absolute;
+                                content: " ";
+                                width: 2px;
+                                background-color: #e6e6e6;
+                                left: 50%;
+                                margin-left: 0px;
+                                z-index: -1;
+                            }
+                        }
+                        .experience{
+                            padding: 0;
+                            margin: 0;
+                            li{
+                                list-style: none;
+                                h3{
+                                
+                                };
+                                h4{
+                                    background: #ed5565;
+                                    color: #fff;
+                                    font-size: 15px;
+                                    height: 28px;
+                                    line-height: 28px;
+                                }
+                                span{
+                                    color: #E87E04;
+                                    font-size: 15px;
+                                }
+                            }
+                        }.workExperience{
+                            margin: 0;
+                            padding: 0;
+                            font-size: 1.2rem;
+                            list-style: none;
+                            position: relative;
+                            li{
+                                width: @width;
+                                height: 10rem;
+                                .title{
+                                    text-align: center;
+                                    font-size: 1.5rem;
+                                    color: #000; 
+                                    padding: 0.4375rem  1rem;
+                                    background: #e6e6e6;
+                                    display: inline-block;
+                                    margin-bottom: 2rem;
+                                }
+                            }
+                            :first-child{
+                                text-align: center;
+                            }
+                            .left{
+                                text-align: left;
+                                position: relative;
+                                .leftModuleIco{
+                                    .position(absolute,2rem,0,50%,0);
+                                    width: 3rem;
+                                    height: 3rem;
+                                    line-height: 3rem;
+                                    margin-left: -1.5rem;
+                                    margin-top: -1.5rem;
+                                    background-color: #FF9000;
+                                    border-radius: 50%;
+                                    color: @colorWhite;
+                                }
+                                .leftModuleContainer{
+                                    width: 45%;
+                                    float: left;
+                                    h3{
+                                        text-align: right;
+                                        margin: 0 0 1.25rem 0;
+                                        font-size: 1.5rem;
+                                    }
+                                    h4{
+                                        text-align: right;
+                                        color: #bfbfbf;
+                                        margin: 0 0 1.25rem 0;
+                                        font-size: 1rem;
+                                    }
+                                    p{
+                                        text-align: right;
+                                        font-family: cursive;
+                                    }
+                                }
+                            }
+                            .right{
+                                text-align: right;
+                                position: relative;
+                                .rightModuleIco{
+                                    .position(absolute,2rem,0,50%,0);
+                                    width: 3rem;
+                                    height: 3rem;
+                                    line-height: 3rem;
+                                    margin-left: -1.5rem;
+                                    margin-top: -1.5rem;
+                                    background-color: #FF9000;
+                                    border-radius: 50%;
+                                    color: @colorWhite;
+                                }
+                                .rightModuleContainer{
+                                    width: 45%;
+                                    float: right;
+                                    h3{
+                                        text-align: left;
+                                        margin: 0 0 1.25rem 0;
+                                        font-size: 1.5rem;
+                                    }
+                                    h4{
+                                        text-align: left;
+                                        color: #bfbfbf;
+                                        margin: 0 0 1.25rem 0;
+                                        font-size: 1rem;
+                                    }
+                                    p{
+                                        text-align: left;
+                                        font-family: cursive;
+                                    }
+                                }
+                            }
+                            .animation;
+                            :after{
+                                top: 20px;
+                                bottom: 0;
+                                position: absolute;
+                                content: " ";
+                                width: 2px;
+                                background-color: #e6e6e6;
+                                left: 50%;
+                                margin-left: 0px;
+                                z-index: -1;
+                            }
+                        }
+                        .experience{
+                            padding: 0;
+                            margin: 0;
+                            li{
+                                list-style: none;
+                                h3{
+                                
+                                };
+                                h4{
+                                    background: #ed5565;
+                                    color: #fff;
+                                    font-size: 15px;
+                                    height: 28px;
+                                    line-height: 28px;
+                                }
+                                span{
+                                    color: #E87E04;
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #module4{
+        background: #FF9000;
+        #_f{ 
+            height: @height;
+            overflow: hidden; 
+            padding: 0;  
+           
+                .myProject{
+                    text-align: center;
+                    font-size: 2.5rem;
+                    padding: 3.33rem;
+                    color: @colorWhite;
+                    margin-top: 5rem;
+                }     
+                .slideToolbar{
+                    ._s{
+                        overflow: hidden;
+                        margin-bottom: 5rem;
+                        float: left;
+                        margin: 0;
+                        .projectList{
+                            margin: 0;
+                            padding: 0;
+                            font-size: 1.2rem;
+                            list-style: none;
+                            position: relative;
+                            li{
+                                .animation;
+                                .project1, .project2, .project3, .project4, .project5, .project6, .project7, .project8,.project9,.project10,.project11,.project12{
+                                     width: 80%;
+                                     background: linear-gradient(180deg,#fff,#f0f0f0);
+                                     cursor: pointer;
+                                     margin: auto;
+                                     padding: 1rem 1rem 0;
+                                    .content{
+                                        width: 100%;
+                                         margin: auto;
+                                         display: table;
+                                         div{
+                                            .desc;
+                                            a{
+                                                text-decoration: none;
+                                                h3{
+                                                    font-size: 1.5rem;
+                                                    text-align: center;
+                                                }
+                                            }
+                                            p{
+                                                font-size: 1rem;
+                                                text-align: center;
+                                                color: #999999;
+                                            }
+                                         }
+                                         &:hover{
+                                           div{
+                                                opacity: 1;
+                                                h3{
+                                                    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+                                                    transition: transform 0.3s, opacity 0.3s;
+                                                    -webkit-transform: translate3d(0, -15px, 0);
+                                                    transform: translate3d(0, -15px, 0);
+                                                }
+                                                p{
+                                                    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+                                                    transition: transform 0.3s, opacity 0.3s;
+                                                    -webkit-transform: translate3d(0, 15px, 0);
+                                                    transform: translate3d(0, 15px, 0);
+                                                }
+                                             }
+                                         }
+                                    }
+                                    .describle{
+                                        text-indent: 25px;
+                                        font-size: 1rem;
+                                        margin: 12px 0;
+                                        line-height: 1.7rem;
+                                    }
+                                    .button{
+                                        button{
+                                            width: @width;
+                                            height: 2.5rem;
+                                            font-size: 1.4rem;
+                                            border: 1px solid #859398;
+                                            background: transparent;
+                                            border-radius: 4px;
+                                            color: #859398;
+                                            a{
+                                                text-decoration: none;
+                                                
+                                            }
+                                            &:hover{
+                                                background: #859398;
+                                                color: #fff;
+                                                 a{
+                                                    color: #fff;
+                                                }
+                                            }
+                                        }
+                                    }
+                                 }
+                                .project1{
+                                    .content{
+                                        background-size:cover!important;
+                                        background:url(../img/zhizhipingtai.png) center no-repeat;
+                                    }
+                                }
+                                .project2{
+                                     .content{
+                                        background-size:cover!important;
+                                        background:url(../img/iCar.png) center no-repeat;
+                                    }
+                                }
+                                .project3{
+                                    .content{
+                                        background-size:cover!important;
+                                        background:url(../img/huiyuanzhongxin.png) center no-repeat;
+                                    }
+                                }
+                                .project4{
+                                     .content{
+                                        background-size:cover!important;
+                                        background:url(../img/gys.jpg) center no-repeat;
+                                    }
+                                }
+                                .project5{
+                                     .content{
+                                        background-size:cover!important;
+                                        background:url(../img/xiaochengxuhoutai.png) center no-repeat;
+                                    }
+                                }
+                                .project6{
+                                     .content{
+                                        background-size:cover!important;
+                                        background:url(../img/erp.jpg) center no-repeat;
+                                    }
+                                }
+                                .project7{
+                                    .content{
+                                        background-size:cover!important;
+                                        background:url(../img/silo.jpg) center no-repeat;
+                                    }
+                                }
+                                .project8{
+                                     .content{
+                                        background-size:cover!important;
+                                        background:url(../img/wanjia.jpg) center no-repeat;
+                                    }
+                                }
+                                .project9{
+                                     .content{
+                                        background-size:cover!important;
+                                        background:url(../img/gostreet.jpg) center no-repeat;
+                                    }
+                                }
+                                .project10{
+                                     .content{
+                                        background-size:cover!important;
+                                        background:url(../img/qtravel.jpg) center no-repeat;
+                                    }
+                                }
+                                .project11{
+                                     .content{
+                                        background-size:cover!important;
+                                        background:url(../img/qifu.jpg) center no-repeat;
+                                    }
+                                }
+                                .project12{
+                                     .content{
+                                        background-size:cover!important;
+                                        background:url(../img/bang.png) center no-repeat;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+           
+        }
+        .dot{
+            width: 100%;
+            margin: 2rem 0;
+            text-align: center;
+            ul{
+                list-style: none;
+               li{
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    border: 1px solid @colorWhite;
+                    border-radius: 100%;
+                    margin: 0 10px;
+                    opacity: 0.8;
+                    cursor: pointer;
+                    &:hover{
+                        opacity: 1;
+                        background: @colorWhite;
+                    }
+               }
+                .active{
+                    background: @colorWhite;
+                }
+                
+            }
+        }
+        .btn{
+            width: @width;
+           
+            .prevPageBtn,
+            .nextPageBtn{
+                font-size: 3rem;
+                color: @colorWhite;
+                cursor: pointer;
+                opacity: 0.8;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+            .prevPageBtn{
+                float: left;
+            }
+            .nextPageBtn{
+                float: right;
+            }
+            .last{
+                cursor: default;
+                color: #ccc;
+            }
+        }
+        .seeGithub{
+            width: @width;
+            height: 3.2rem;
+            border:1px solid @colorWhite;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 3.2rem;
+            color: #ccc;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 5rem;
+            &:hover{
+                background: @colorWhite;
+                opacity: .5;
+                color: #333;
+                 a{
+                    color: #333;
+                    font-size: 1.2rem;
+                }
+            }
+            a{
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
+    #module5{
+        background: url(../img/bg.png);
+        .container{
+            height: @height;
+                .page{
+                     height: @height;
+                     .introduce{
+                            display: table;
+                            height: @height;
+                            padding: 0;
+                            .content{
+                                display: table-cell;
+                                vertical-align: middle;
+                                .title{
+                                    text-align: center;
+                                    font-size: 2.5rem;
+                                    margin: 3.33rem 3.33rem 5rem 3.33rem;
+                                }
+                                .maruko_grandpa,
+                                .minions,
+                                .pin,
+                                .hellokitty{
+                                    margin: auto;
+                                    width: 200px;
+                                    height: 150px;
+                                    cursor: pointer;
+                                    display: table;
+                                    div{
+                                        width: 100%;
+                                        height: 100%;
+                                        background: rgba(0,0,0,.5);
+                                        opacity: 0;
+                                        display: table-cell;
+                                        vertical-align: middle;
+                                    }
+                                    &:hover{
+                                       div{
+                                            opacity: 1;
+                                            color: #fff;
+                                            text-align: center;
+                                            h4{
+                                                font-weight: bold;
+                                                -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+                                                transition: transform 0.3s, opacity 0.3s;
+                                                -webkit-transform: translate3d(0, -15px, 0);
+                                                transform: translate3d(0, -15px, 0);
+                                            }
+                                            a{
+                                                color: #fff;
+                                                text-decoration: none;
+                                                span{
+                                                    font-size: 1.5rem;
+                                                    font-weight: bold;
+                                                    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+                                                    transition: transform 0.3s, opacity 0.3s;
+                                                    -webkit-transform: translate3d(0, 15px, 0);
+                                                    transform: translate3d(0, 15px, 0);
+                                                }
+                                            }
+                        
+                                         }
+                                     }
+                                }
+                                .maruko_grandpa{
+                                    background: url(../img/box2.png); 
+                                }
+                                .minions{
+                                    background: url(../img/box1.png);
+                                }
+                                .pin{
+                                    background: url(../img/baymax.jpg);
+                                }
+                                .hellokitty{
+                                    background: url(../img/hellokitty.jpg);
+                                }
+                                .shaw{
+                                    width: 100%;
+                                    height: 4px;
+                                    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.1) inset;
+                                }
+                                .seeGithub{
+                                    width: @width;
+                                    height: 3.2rem;
+                                    border:1px solid #ccc;
+                                    border-radius: 10px;
+                                    text-align: center;
+                                    line-height: 3.2rem;
+                                    color: #ccc;
+                                    font-size: 1.2rem;
+                                    cursor: pointer;
+                                    margin-top: 5rem;
+                                    &:hover{
+                                        opacity: .5;
+                                        border:1px solid #FF9000;
+                                        color: #FF9000;
+                                         a{
+                                            color: #FF9000;
+                                        }
+                                    }
+                                    a{
+                                        text-decoration: none;
+                                        color: #ccc;
+                                        font-size: 1.2rem;
+                                    }
+                                }
+                                .jRCarouselGallery {
+                                        margin: 0 auto; /* optional - if want to center align */
+                                       img{
+                                            border-radius: 10px;
+                                        }
+                                        .navigation{
+                                            left: 0;
+                                            bottom: 0px; 
+                                            right: 0px; 
+                                            text-align: center;
+                                            .nav{
+                                                width: 11px!important;
+                                                height: 11px!important;
+                                            }
+                                        }
+                                }
+                    }
+                }
+             }
+        }
+    }
+    #module6{
+        background:  url(../img/bg.png) #FF9000;
+        .container{
+            height: @height;
+            .page{
+                 height: @height;
+                 .introduce{
+                    display: table;
+                    height: @height;
+                    padding: 0;
+                    .content{
+                        display: table-cell;
+                        vertical-align: middle;
+                        .title{
+                            text-align: center;
+                            font-size: 2.5rem;
+                            color: @colorWhite;
+                            margin: 3.33rem 3.33rem 5rem 3.33rem;
+                        }
+                        .circle{
+                            width: 250px;
+                            height: 250px;
+                            position: relative;
+                            margin:  auto;
+                            .outCircle{
+                                width: 250px;
+                                height: 250px;
+                                border: 4px dashed #999;
+                                border-radius: 50%;
+                                margin: auto;
+                                list-style: none;
+                                font-size: 12px;
+                                li{
+                                    width: 50px;
+                                    height: 50px;
+                                    border-radius: 50%;
+                                    position: absolute;
+                                    text-align: center;
+                                    line-height: 50px;
+                                    color: #fff;
+                                }
+                                @-webkit-keyframes outX{0%{left:-27px}100%{left:217px}}
+                                @keyframes outX{0%{left:-27px}100%{left:217px}}
+                                @-webkit-keyframes outY{0%{top:-27px}100%{top:217px}}
+                                @keyframes outY{0%{top:-27px}100%{top:217px}}
+                                .git{
+                                    background: rgba(121,100,102,0.8);
+                                    animation-name: outX, outY;
+                                    animation-duration: 8s, 8s;
+                                    animation-timing-function: cubic-bezier(0.36, 0, 0.64, 1), cubic-bezier(0.36, 0, 0.64, 1);
+                                    animation-delay: -4s, 0s;
+                                    animation-iteration-count: infinite, infinite;
+                                    animation-direction: alternate, alternate;
+                                    animation-fill-mode: none, none;
+                                    animation-play-state: running, running;
+                                }
+                                .vue{
+                                    background: rgba(49,65,82,0.8);
+                                    animation-name: outX, outY;
+                                    animation-duration: 8s, 8s;
+                                    animation-timing-function: cubic-bezier(0.36, 0, 0.64, 1), cubic-bezier(0.36, 0, 0.64, 1);
+                                    animation-delay: -6s, -2s;
+                                    animation-iteration-count: infinite, infinite;
+                                    animation-direction: alternate, alternate;
+                                    animation-fill-mode: none, none;
+                                    animation-play-state: running, running;
+                                }
+                                .less{
+                                    background: rgba(76,157,160,0.8);
+                                    animation-name: outX, outY;
+                                    animation-duration: 8s, 8s;
+                                    animation-timing-function: cubic-bezier(0.36, 0, 0.64, 1), cubic-bezier(0.36, 0, 0.64, 1);
+                                    animation-delay: -8s, -4s;
+                                    animation-iteration-count: infinite, infinite;
+                                    animation-direction: alternate, alternate;
+                                    animation-fill-mode: none, none;
+                                    animation-play-state: running, running;
+                                }
+                                .webpack{
+                                    background: rgba(66,66,66,0.8);
+                                    animation-name: outX, outY;
+                                    animation-duration: 8s, 8s;
+                                    animation-timing-function: cubic-bezier(0.36, 0, 0.64, 1), cubic-bezier(0.36, 0, 0.64, 1);
+                                    animation-delay: -10s, -6s;
+                                    animation-iteration-count: infinite, infinite;
+                                    animation-direction: alternate, alternate;
+                                    animation-fill-mode: none, none;
+                                    animation-play-state: running, running;
+                                }
+                                .miniProgram{
+                                    background: rgba(121,100,102,0.8);
+                                    animation-name: outX, outY;
+                                    animation-duration: 8s, 8s;
+                                    animation-timing-function: cubic-bezier(0.36, 0, 0.64, 1), cubic-bezier(0.36, 0, 0.64, 1);
+                                    animation-delay: -12s, -8s;
+                                    animation-iteration-count: infinite, infinite;
+                                    animation-direction: alternate, alternate;
+                                    animation-fill-mode: none, none;
+                                    animation-play-state: running, running;
+                                }
+                                .jquery{
+                                    background: rgba(117,148,179,0.8);
+                                    animation-name: outX, outY;
+                                    animation-duration: 8s, 8s;
+                                    animation-timing-function: cubic-bezier(0.36, 0, 0.64, 1), cubic-bezier(0.36, 0, 0.64, 1);
+                                    animation-delay: -14s, -10s;
+                                    animation-iteration-count: infinite, infinite;
+                                    animation-direction: alternate, alternate;
+                                    animation-fill-mode: none, none;
+                                    animation-play-state: running, running;
+                                }
+                                .bootstrap{
+                                    background: rgba(71,83,94,0.8);
+                                    animation-name: outX, outY;
+                                    animation-duration: 8s, 8s;
+                                    animation-timing-function: cubic-bezier(0.36, 0, 0.64, 1), cubic-bezier(0.36, 0, 0.64, 1);
+                                    animation-delay: -16s, -12s;
+                                    animation-iteration-count: infinite, infinite;
+                                    animation-direction: alternate, alternate;
+                                    animation-fill-mode: none, none;
+                                    animation-play-state: running, running;
+                                }
+                                .css3{
+                                    background: rgba(147,147,189,0.8);
+                                    animation-name: outX, outY;
+                                    animation-duration: 8s, 8s;
+                                    animation-timing-function: cubic-bezier(0.36, 0, 0.64, 1), cubic-bezier(0.36, 0, 0.64, 1);
+                                    animation-delay: -18s, -14s;
+                                    animation-iteration-count: infinite, infinite;
+                                    animation-direction: alternate, alternate;
+                                    animation-fill-mode: none, none;
+                                    animation-play-state: running, running;
+                                }
+                            }
+                            .innerCircle{
+                                width: 142px;
+                                height: 142px;
+                                border: 4px dashed #999;
+                                border-radius: 50%;
+                                top: 50%;
+                                left: 50%;
+                                margin-top: -71px;
+                                margin-left: -71px;
+                                position: absolute;
+                                list-style: none;
+                                font-size: 12px;
+                                li{
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 50%;
+                                    position: absolute;
+                                    text-align: center;
+                                    line-height: 40px;
+                                    color: #fff;
+                                }
+                                @-webkit-keyframes innerX{0%{left:-22px}100%{left:122px}}
+                                @keyframes innerX{0%{left:-22px}100%{left:122px}}
+                                @-webkit-keyframes innerY{0%{top:122px}100%{top:-22px}}
+                                @keyframes innerY{0%{top:122px}100%{top:-22px}}
+                                .mui{
+                                    background: rgba(207,184,178,0.8);
+                                    animation-name: innerX, innerY;
+                                    animation-duration: 8s, 8s;
+                                    animation-timing-function: cubic-bezier(0.36, 0, 0.64, 1), cubic-bezier(0.36, 0, 0.64, 1);
+                                    animation-delay: -4s, 0s;
+                                    animation-iteration-count: infinite, infinite;
+                                    animation-direction: alternate, alternate;
+                                    animation-fill-mode: none, none;
+                                    animation-play-state: running, running;
+                                }
+                                .es6{
+                                    background: rgba(238,215,163,0.8);
+                                    animation-name: innerX, innerY;
+                                    animation-duration: 8s, 8s;
+                                    animation-timing-function: cubic-bezier(0.36, 0, 0.64, 1), cubic-bezier(0.36, 0, 0.64, 1);
+                                    animation-delay: -8s, -4s;
+                                    animation-iteration-count: infinite, infinite;
+                                    animation-direction: alternate, alternate;
+                                    animation-fill-mode: none, none;
+                                    animation-play-state: running, running;
+                                }
+                                .js{
+                                    background: rgba(171,209,220,0.8);
+                                    animation-name: innerX, innerY;
+                                    animation-duration: 8s, 8s;
+                                    animation-timing-function: cubic-bezier(0.36, 0, 0.64, 1), cubic-bezier(0.36, 0, 0.64, 1);
+                                    animation-delay: -12s, -8s;
+                                    animation-iteration-count: infinite, infinite;
+                                    animation-direction: alternate, alternate;
+                                    animation-fill-mode: none, none;
+                                    animation-play-state: running, running;
+                                }
+                                .html5{
+                                    background: rgba(179,164,140,0.8);
+                                    animation-name: innerX, innerY;
+                                    animation-duration: 8s, 8s;
+                                    animation-timing-function: cubic-bezier(0.36, 0, 0.64, 1), cubic-bezier(0.36, 0, 0.64, 1);
+                                    animation-delay: -16s, -12s;
+                                    animation-iteration-count: infinite, infinite;
+                                    animation-direction: alternate, alternate;
+                                    animation-fill-mode: none, none;
+                                    animation-play-state: running, running;
+                                }
+                            }
+                        
+                        }
+                        .detaill{
+                             margin:  2rem auto;
+                             color: #fff;
+                             font-size: 1.2rem;
+                             //height: 150px;
+                             padding: 20px;
+//                           background: rgba(181, 219, 136,0.2);
+                
+                             /*光标动画*/
+                            @keyframes caret {
+                                50% {border-color: transparent;}
+                            }
+                            
+                            /*文本动画：从宽度为0开始*/
+                            @keyframes text {
+                                from {width: 0;}
+                            }
+                             p{
+                                width: 100%;
+                                
+                                overflow: hidden;
+                                //word-break: keep-all;
+                               // background: rgba(181, 219, 136,0.2);
+                                color: #fff;
+                                //border-right: 3px solid #000000;
+                                //animation: caret 0.5s step-end 1 ,text 5s 1 steps(11); 
+                             }
+                        }
+                    }
+                 }
+            }
+        }
+    }
+    .goTop{
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        display: none;
+        width: 3rem;
+        height: 3rem;
+        background-color: #000000;
+        text-align: center;
+        line-height: 3rem;
+        border-radius: 5px;
+        display: none;
+        i{
+            font-size: 2rem;
+            cursor: pointer;
+            color: @colorWhite;
+        }
+    }
+    .popup{
+        width: @width;
+        height: @height;
+        background: rgba(255, 144, 0, 0.9);
+        position: fixed;
+        top: 0;
+        display: none;
+        i{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: @colorWhite;
+            cursor: pointer;
+            &:hover{
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        img{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -7rem;
+            margin-top: -7rem;
+            width: 14rem;
+            height: 14rem;
+        }
+    }
+    .pic{
+        width: @width;
+        height: @height;
+        background: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        top: 0;
+        display: none;
+        i{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: @colorWhite;
+            cursor: pointer;
+            &:hover{
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        img{
+            position: absolute;
+            top: 40%;
+            margin-top: -5rem;
+            width: 80%;
+            margin-left: 10%;
+        }
+    }
+}
+
+.nav-dot{
+    width: 40px;
+    height: 252px;
+    position: absolute;
+    top: 50%;
+    margin-top: -126px;
+    right: 50px;
+    li{
+        display: block;
+        width: 45px;
+        height: 45px;
+        span{
+            width: 12px;
+            height: 12px;
+            border-radius: 100%;
+            background: rgba(0,0,0,.2);
+            cursor: pointer;
+            display: block;
+            position: relative;
+            top: 20px;
+        }
+    }
+    .index,.about,.skill,.work,.project,.contact{
+        position: relative;
+        left: -14px;
+        width: 40px;
+        height: 40px;
+        border-radius: 0;
+        position: relative;
+        top: 6px;
+    }
+    .index{
+        background: url(../img/index.png);
+    }
+    .about{
+        background: url(../img/about.png);
+    }
+    .skill{
+        background: url(../img/skill.png);
+    }
+    .work{
+        background: url(../img/work.png);
+    }
+    .project{
+      background: url(../img/project.png);  
+    }
+    .contact{
+      background: url(../img/contact.png);  
+    }
+}
+.tooltip-inner{
+   background: #333 !important; //修改背景色
+   text-align: left !important;//字体左对齐
+   color:#fff !important;//字体颜色
+   max-width: 400px !important;//修改宽度
+}
+
